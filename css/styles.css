@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/*Definição das cores usadas*/
+:root {
+  --cinza-claro: rgb(202, 200, 200);
+  --cinza-fumaca: rgb(245, 245, 245);
+  --cinza-escuro: rgb(110, 110, 110);
+  --cinza-escuro-light: rgb(134, 134, 134);
+  --branco: #fff;
+}
+
+/*Reset básico*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*Estilização*/
+
+body {
+  background-color: var(--cinza-claro);
+}
+
+.container-principal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 90vh;
+  margin: 2em auto;
+  background-color: var(--cinza-fumaca);
+  box-shadow: 0 35px 50px rgba(0, 0, 0, 0.1);
+}
+
+.coluna-esquerda {
+  /* position: relative; */
+  background-color: var(--cinza-escuro);
+  padding: 40px;
+  flex: 1;
+}
+
+.coluna-direita {
+  /* position: relative; */
+  background-color: var(--cinza-escuro-light);
+  padding: 40px;
+  flex: 3;
+}
+
+.texto-perfil {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+/*Estilizar imagem do perfil*/
+.coluna-esquerda .texto-perfil .img-box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px black solid;
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+.texto-perfil .img-box img {
+  position: absolute;
+  /*Top e left em relação à div container img-box*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*Menu de navegação*/
+.menu {
+  margin-top: 3em;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  text-align: center;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 1em 0 1em 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--branco);
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.menu ul li a:hover {
+  background-color: var(--branco);
+  color: black;
+  cursor: pointer;
+}
+
+.link-ativo {
+  background-color: black;
+  color: var(--branco);
+}
+
+/*Estilização dos dados*/
+
+.coluna-direita {
+  display: flex;
+  align-items: flex-start;
+}
+
+.coluna-direita .dados {
+  margin-top: 10em;
+}
+
+.coluna-direita .dados h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25em;
+}
+
+.coluna-direita .dados .span-altera-cor {
+  color: var(--branco);
+}
+
+.coluna-direita .dados p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.coluna-direita .dados p:first-of-type {
+  text-transform: uppercase;
+}
+
+.coluna-direita .dados .descricao {
+  margin-top: 3em;
+}
+
+.coluna-direita .dados .descricao p {
+  text-transform: capitalize;
+}
+
+/*Redes sociais*/
+.coluna-direita .dados .redes-sociais {
+  margin-top: 3em;
+}
+
+.redes-sociais ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+.redes-sociais ul li {
+  display: block;
+  width: 5em;
+}
+
+.redes-sociais ul li a i {
+  font-size: 3em;
+  color: black;
+}
+
+.redes-sociais ul li a i:hover {
+  color: var(--branco);
+}
+
+/*Estilização da página conhecimentos.html*/
+
+.conhecimentos {
+  margin-top: 3em;
+  margin-left: 2em;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.conhecimentos ol {
+  list-style-type: lower-alpha;
+}
+
+/*Estilização da página objetivos.html*/
+.objetivos {
+  margin-top: 3em;
+}
+
+.objetivos ul {
+  list-style: none;
+}
+
+.objetivos ul li {
+  margin-top: 2em;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: justify;
+}
+
+.coluna-direita .objetivos .span-altera-cor {
+  color: var(--branco);
+}
+
+/*Media Queries*/
+@media (max-width: 975px) {
+  .container-principal {
+    flex-direction: column;
+    min-width: auto;
+  }
+
+  .coluna-direita,
+  .coluna-esquerda {
+    width: 100%;
+  }
+
+  .objetivos {
+    margin-top: 0.5em;
+  }
+
+  .objetivos ul li {
+    margin-top: 0.5em;
+  }
+
+  .coluna-direita {
+    padding: 15px;
+  }
+  .coluna-direita .dados {
+    margin-top: 1em;
+  }
+
+  .coluna-direita .dados h1 {
+    font-size: 1rem;
+  }
+
+  .coluna-direita .dados .redes-sociais {
+    margin-top: 1em;
+  }
+  .coluna-esquerda {
+    padding: 15px;
+  }
+
+  .conhecimentos {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+}
